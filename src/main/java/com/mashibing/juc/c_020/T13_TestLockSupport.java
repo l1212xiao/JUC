@@ -20,7 +20,6 @@ public class T13_TestLockSupport {
         });
 
         t.start();
-
         LockSupport.unpark(t);
 
         /*try {
@@ -31,6 +30,5 @@ public class T13_TestLockSupport {
         System.out.println("after 8 senconds!");
 
         LockSupport.unpark(t);*/
-
     }
 }

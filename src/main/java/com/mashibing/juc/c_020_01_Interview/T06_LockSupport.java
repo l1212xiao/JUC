@@ -54,13 +54,9 @@ public class T06_LockSupport {
 		Thread t2 = new Thread(() -> {
 			System.out.println("t2Æô¶¯");
 			if (c.size() != 5) {
-
 				LockSupport.park();
-
 			}
 			System.out.println("t2 ½áÊø");
-
-
 		}, "t2");
 
 		t2.start();

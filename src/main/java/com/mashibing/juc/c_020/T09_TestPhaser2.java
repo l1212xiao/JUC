@@ -8,7 +8,6 @@ public class T09_TestPhaser2 {
     static Random r = new Random();
     static MarriagePhaser phaser = new MarriagePhaser();
 
-
     static void milliSleep(int milli) {
         try {
             TimeUnit.MILLISECONDS.sleep(milli);
@@ -21,7 +20,7 @@ public class T09_TestPhaser2 {
 
         phaser.bulkRegister(7);
 
-        for(int i=0; i<5; i++) {
+        for (int i = 0; i < 5; i++) {
 
             new Thread(new Person("p" + i)).start();
         }
@@ -30,7 +29,6 @@ public class T09_TestPhaser2 {
         new Thread(new Person("新娘")).start();
 
     }
-
 
 
     static class MarriagePhaser extends Phaser {
@@ -59,7 +57,6 @@ public class T09_TestPhaser2 {
         }
     }
 
-
     static class Person implements Runnable {
         String name;
 
@@ -68,7 +65,6 @@ public class T09_TestPhaser2 {
         }
 
         public void arrive() {
-
             milliSleep(r.nextInt(1000));
             System.out.printf("%s 到达现场！\n", name);
             phaser.arriveAndAwaitAdvance();
@@ -83,13 +79,11 @@ public class T09_TestPhaser2 {
         public void leave() {
             milliSleep(r.nextInt(1000));
             System.out.printf("%s 离开！\n", name);
-
-
             phaser.arriveAndAwaitAdvance();
         }
 
         private void hug() {
-            if(name.equals("新郎") || name.equals("新娘")) {
+            if (name.equals("新郎") || name.equals("新娘")) {
                 milliSleep(r.nextInt(1000));
                 System.out.printf("%s 洞房！\n", name);
                 phaser.arriveAndAwaitAdvance();
@@ -103,17 +97,11 @@ public class T09_TestPhaser2 {
         public void run() {
             arrive();
 
-
             eat();
-
 
             leave();
 
-
             hug();
-
         }
     }
 }
-
-

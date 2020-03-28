@@ -8,6 +8,6 @@ public class T01_NormalReference {
         m = null;
         System.gc(); //DisableExplicitGC
 
-        System.in.read();
+        System.in.read(); //为了阻塞当前线程
     }
 }

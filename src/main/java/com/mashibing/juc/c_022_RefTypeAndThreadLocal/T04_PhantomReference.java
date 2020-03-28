@@ -1,6 +1,5 @@
 /**
  *
- *
  *     一个对象是否有虚引用的存在，完全不会对其生存时间构成影响，
  *     也无法通过虚引用来获取一个对象的实例。
  *     为一个对象设置虚引用关联的唯一目的就是能在这个对象被收集器回收时收到一个系统通知。
@@ -19,8 +18,6 @@
  *     DirectByteBuffer就是通过虚引用来实现堆外内存的释放的。
  *
  */
-
-
 package com.mashibing.juc.c_022_RefTypeAndThreadLocal;
 
 import java.lang.ref.PhantomReference;
@@ -33,13 +30,9 @@ public class T04_PhantomReference {
     private static final List<Object> LIST = new LinkedList<>();
     private static final ReferenceQueue<M> QUEUE = new ReferenceQueue<>();
 
-
-
     public static void main(String[] args) {
 
-
         PhantomReference<M> phantomReference = new PhantomReference<>(new M(), QUEUE);
-
 
         new Thread(() -> {
             while (true) {

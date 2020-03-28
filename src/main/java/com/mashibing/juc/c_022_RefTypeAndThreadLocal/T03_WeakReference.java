@@ -1,6 +1,5 @@
 /**
  * 弱引用遭到gc就会回收
- *
  */
 package com.mashibing.juc.c_022_RefTypeAndThreadLocal;
 
@@ -13,7 +12,6 @@ public class T03_WeakReference {
         System.out.println(m.get());
         System.gc();
         System.out.println(m.get());
-
 
         ThreadLocal<M> tl = new ThreadLocal<>();
         tl.set(new M());

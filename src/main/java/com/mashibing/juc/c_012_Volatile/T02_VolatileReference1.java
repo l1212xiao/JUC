@@ -11,7 +11,6 @@ public class T02_VolatileReference1 {
 
     volatile static T02_VolatileReference1 T = new T02_VolatileReference1();
 
-
     void m() {
         System.out.println("m start");
         while(running) {

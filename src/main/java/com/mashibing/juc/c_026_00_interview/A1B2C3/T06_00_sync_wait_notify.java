@@ -3,14 +3,14 @@ package com.mashibing.juc.c_026_00_interview.A1B2C3;
 
 public class T06_00_sync_wait_notify {
     public static void main(String[] args) {
-        final Object o = new Object();
 
+        final Object o = new Object();
         char[] aI = "1234567".toCharArray();
         char[] aC = "ABCDEFG".toCharArray();
 
-        new Thread(()->{
+        new Thread(() -> {
             synchronized (o) {
-                for(char c : aI) {
+                for (char c : aI) {
                     System.out.print(c);
                     try {
                         o.notify();
@@ -19,15 +19,13 @@ public class T06_00_sync_wait_notify {
                         e.printStackTrace();
                     }
                 }
-
                 o.notify(); //必须，否则无法停止程序
             }
-
         }, "t1").start();
 
-        new Thread(()->{
+        new Thread(() -> {
             synchronized (o) {
-                for(char c : aC) {
+                for (char c : aC) {
                     System.out.print(c);
                     try {
                         o.notify();
@@ -36,7 +34,6 @@ public class T06_00_sync_wait_notify {
                         e.printStackTrace();
                     }
                 }
-
                 o.notify();
             }
         }, "t2").start();

@@ -70,6 +70,5 @@ public class MyContainer1<T> {
                 }
             }, "p" + i).start();
         }
-
     }
 }

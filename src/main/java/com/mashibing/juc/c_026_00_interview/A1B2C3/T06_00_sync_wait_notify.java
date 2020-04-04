@@ -1,6 +1,5 @@
 package com.mashibing.juc.c_026_00_interview.A1B2C3;
 
-
 public class T06_00_sync_wait_notify {
     public static void main(String[] args) {
 

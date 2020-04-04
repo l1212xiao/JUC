@@ -6,7 +6,6 @@ public class T07_00_sync_wait_notify {
     private static volatile boolean t2Started = false;
 
     //private static CountDownLatch latch = new C(1);
-
     public static void main(String[] args) {
         final Object o = new Object();
         char[] aI = "1234567".toCharArray();
